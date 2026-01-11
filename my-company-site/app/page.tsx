@@ -25,27 +25,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. 서비스 소개 (수정됨: 폰트 색상 진하게) */}
+      {/* 2. 서비스 소개 */}
       <section id="services" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          {/* ▼ text-slate-900 추가하여 진하게 변경 */}
           <h2 className="text-3xl font-bold text-center mb-16 text-slate-900">우리의 핵심 가치</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 border border-slate-100 rounded-2xl hover:shadow-xl transition duration-300">
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 text-2xl">🚀</div>
-              {/* ▼ text-slate-900 추가하여 진하게 변경 */}
               <h3 className="text-xl font-bold mb-3 text-slate-900">빠른 성장 지원</h3>
               <p className="text-slate-600">체계적인 프로세스로 고객사의 비즈니스 속도를 높여드립니다.</p>
             </div>
             <div className="p-8 border border-slate-100 rounded-2xl hover:shadow-xl transition duration-300">
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 text-2xl">💡</div>
-              {/* ▼ text-slate-900 추가하여 진하게 변경 */}
               <h3 className="text-xl font-bold mb-3 text-slate-900">혁신적인 솔루션</h3>
               <p className="text-slate-600">기존의 틀을 깨는 창의적인 방법으로 문제를 해결합니다.</p>
             </div>
             <div className="p-8 border border-slate-100 rounded-2xl hover:shadow-xl transition duration-300">
               <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 text-2xl">🤝</div>
-              {/* ▼ text-slate-900 추가하여 진하게 변경 */}
               <h3 className="text-xl font-bold mb-3 text-slate-900">신뢰받는 파트너</h3>
               <p className="text-slate-600">언제나 고객의 입장에서 생각하며 끝까지 함께합니다.</p>
             </div>
@@ -64,7 +60,6 @@ export default function Home() {
             아래 연락처로 문의해주세요.<br />
           </p>
           
-          {/* 연락처 카드 */}
           <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 max-w-2xl mx-auto mb-10">
             <div className="flex flex-col gap-8">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
@@ -101,6 +96,65 @@ export default function Home() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. SNS 링크 섹션 (새로 추가됨) */}
+      <section className="py-12 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-6 text-center">
+          <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">
+            Connect with CREOD
+          </h3>
+          
+          <div className="flex justify-center items-center gap-8 md:gap-12">
+            {/* 1. 네이버 블로그 */}
+            <a 
+              href="https://blog.naver.com/ttingssam" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+            >
+              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-[#03C75A] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1">
+                <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/>
+                </svg>
+              </div>
+              <span className="text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">블로그</span>
+            </a>
+
+            {/* 2. 회사 인스타그램 */}
+            <a 
+              href="https://www.instagram.com/creod_edu_lab/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+            >
+              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-gradient-to-tr group-hover:from-[#f9ce34] group-hover:via-[#ee2a7b] group-hover:to-[#6228d7] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <span className="text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">회사 인스타</span>
+            </a>
+
+            {/* 3. 대표 인스타그램 */}
+            <a 
+              href="https://www.instagram.com/tting_ssam/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3"
+            >
+              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <span className="text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">띵쌤 인스타</span>
+            </a>
           </div>
         </div>
       </section>

@@ -1,19 +1,19 @@
 import Image from "next/image";
 
 export default function InstructorsPage() {
-  // 데이터에서 field 항목도 아예 삭제했습니다.
   const instructors = [
-    { img: "/ceo.jpg" },
+    // 회사소개 페이지와 똑같이 슬래시(/)를 빼고 작성합니다.
+    { img: "ceo.jpg" }, 
     { img: "https://via.placeholder.com/400x500" },
+    { img: "ceo2.png" },
     { img: "https://via.placeholder.com/400x500" },
+    { img: "ceo3.png" },
     { img: "https://via.placeholder.com/400x500" },
+    { img: "ceo4.png" },
     { img: "https://via.placeholder.com/400x500" },
+    { img: "ceo5.png" },
     { img: "https://via.placeholder.com/400x500" },
-    { img: "https://via.placeholder.com/400x500" },
-    { img: "https://via.placeholder.com/400x500" },
-    { img: "https://via.placeholder.com/400x500" },
-    { img: "https://via.placeholder.com/400x500" },
-    { img: "https://via.placeholder.com/400x500" },
+    { img: "ceo6.png" },
     { img: "https://via.placeholder.com/400x500" },
     { img: "https://via.placeholder.com/400x500" },
     { img: "https://via.placeholder.com/400x500" },
@@ -21,7 +21,6 @@ export default function InstructorsPage() {
     { img: "https://via.placeholder.com/400x500" },
   ];
 
-  // 무한 루프용 복사
   const allInstructors = [...instructors, ...instructors];
 
   return (
@@ -33,18 +32,17 @@ export default function InstructorsPage() {
         </p>
       </div>
 
-      {/* 텍스트가 절대 나올 수 없는 사진 전용 슬라이드 */}
       <div className="w-full overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing group">
         <div className="py-5">
           <div className="instructor-grid animate-scroll group-hover:[animation-play-state:paused]">
             {allInstructors.map((ins, idx) => (
               <div key={idx} className="w-[220px] md:w-[280px]">
-                {/* 텍스트 박스(div)를 아예 없애고 사진 박스만 남겼습니다. */}
-                <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-105 border border-slate-100 bg-slate-50">
+                <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-2xl hover:scale-105 border border-slate-100 bg-slate-50 relative">
                   <img 
                     src={ins.img} 
-                    alt="Instructor" 
+                    alt="Instructor Profile" 
                     className="w-full h-full object-cover" 
+                    loading="eager"
                   />
                 </div>
               </div>
