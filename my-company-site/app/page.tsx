@@ -1,9 +1,8 @@
-"use client"; // 👈 클릭 기능을 위해 이 줄이 반드시 맨 위에 있어야 합니다!
+"use client";
 
 import Link from "next/link";
 
 export default function Home() {
-  // 강의 현장 사진 데이터
   const lecturePhotos = [
     { src: "scene1.jpg" }, 
     { src: "https://via.placeholder.com/600x400?text=Lecture+Scene+1" },
@@ -15,11 +14,13 @@ export default function Home() {
 
   const infinitePhotos = [...lecturePhotos, ...lecturePhotos];
 
-  // [핵심] 문의하기 버튼 클릭 시 강제로 이동시키는 함수
-  const scrollToContact = () => {
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     const section = document.getElementById('contact');
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 10);
     }
   };
 
@@ -40,37 +41,41 @@ export default function Home() {
             <Link href="contents" className="px-8 py-3.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition shadow-lg inline-block text-lg">
               콘텐츠 보러가기
             </Link>
-            
-            {/* ▼▼▼ 여기가 수정되었습니다 (Link 태그 -> button 태그) ▼▼▼ */}
-            <button 
-              onClick={scrollToContact}
+            <a 
+              href="#contact"
+              onClick={handleScrollToContact}
               className="px-8 py-3.5 bg-white text-indigo-600 font-bold border border-indigo-200 rounded-xl hover:bg-slate-50 transition inline-block text-lg cursor-pointer"
             >
               문의하기
-            </button>
-            {/* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* 2. 핵심 가치 - 심플 & 컴팩트 */}
-      <section className="py-12 bg-white border-b border-slate-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4 text-center">
-            <div className="flex flex-col items-center gap-2 group">
-              <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">🚀</div>
-              <h3 className="text-lg font-bold text-slate-800">빠른 성장 지원</h3>
+      {/* 2. 핵심 가치 (모바일 가로 3열 정렬 수정됨) */}
+      <section className="py-10 md:py-12 bg-white border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="flex flex-row justify-between md:justify-around items-start md:items-center gap-2 md:gap-4 text-center">
+            
+            <div className="flex flex-col items-center gap-2 group w-1/3">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">🚀</div>
+              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">즐거운 소통</h3>
             </div>
+
             <div className="hidden md:block w-px h-12 bg-slate-100"></div>
-            <div className="flex flex-col items-center gap-2 group">
-              <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">💡</div>
-              <h3 className="text-lg font-bold text-slate-800">혁신적인 솔루션</h3>
+
+            <div className="flex flex-col items-center gap-2 group w-1/3">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">💡</div>
+              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">혁신적 아이디어</h3>
             </div>
+
             <div className="hidden md:block w-px h-12 bg-slate-100"></div>
-            <div className="flex flex-col items-center gap-2 group">
-              <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-300">🤝</div>
-              <h3 className="text-lg font-bold text-slate-800">신뢰받는 파트너</h3>
+
+            <div className="flex flex-col items-center gap-2 group w-1/3">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">🤝</div>
+              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">함께하는 동료</h3>
             </div>
+
           </div>
         </div>
       </section>
@@ -96,15 +101,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. 문의하기 섹션 (ID값 contact 확인 필수) */}
+      {/* 4. 문의하기 섹션 */}
       <section id="contact" className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-slate-900 break-keep">
             함께 성장할 준비가 되셨나요?
           </h2>
           <p className="text-lg md:text-xl text-slate-600 mb-10 md:mb-12 max-w-2xl mx-auto break-keep">
-            진로 교육, 캠프, 강연 등 궁금한 점이 있다면<br />
-            아래 연락처로 문의해주세요.
+            강의,교육,캠프,자격증과정,강연,강사양성 등<br/>
+            궁금한 점이 있다면 아래 연락처로 문의해주세요.
           </p>
           
           <div className="bg-slate-50 p-6 md:p-10 rounded-[2rem] shadow-sm border border-slate-100 max-w-2xl mx-auto mb-10">
