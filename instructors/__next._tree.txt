@@ -7,4 +7,4 @@
 :HL["ceo4.png","image"]
 :HL["ceo5.png","image"]
 :HL["ceo6.png","image"]
-0:{"buildId":"zxo2fIV8vT-ieNmNk0d-P","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"instructors","paramType":null,"paramKey":"instructors","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"fwGgxEDIbkfsd2l_2jXud","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"instructors","paramType":null,"paramKey":"instructors","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
