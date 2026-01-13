@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "크레오디교육연구소",
-  description: "꿈을 현실로 디자인하는 진로 교육 전문 기업",
+  description: "꿈을 현실로 디자인하는 교육 전문 기업",
 };
 
 export default function RootLayout({

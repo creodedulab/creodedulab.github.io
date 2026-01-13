@@ -1,4 +1,3 @@
-// app/components/Navbar.tsx
 "use client";
 
 import { useState } from "react";
@@ -7,7 +6,6 @@ import Link from "next/link";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // 메뉴 리스트 수정 (무료서비스 주소 변경)
   const menuItems = [
     { name: "홈", href: "/" },
     { name: "회사소개", href: "/about" },
@@ -23,8 +21,14 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           
+          {/* ▼▼▼ 로고 위치 변경 (이미지 -> 텍스트 순서) ▼▼▼ */}
           <Link href="/" className="font-bold text-2xl text-indigo-900 flex items-center gap-2">
-            CREOD
+            <img 
+              src="/logo.png" 
+              alt="CREOD Logo" 
+              className="h-8 w-auto object-contain" 
+            />
+            크레오디교육연구소
           </Link>
 
           {/* PC 메뉴 */}
@@ -33,7 +37,6 @@ export default function Navbar() {
               <Link 
                 key={item.name} 
                 href={item.href}
-                // 무료서비스만 새 창에서 열리게 하려면 아래 속성을 추가합니다.
                 target={item.name === "무료서비스" ? "_blank" : "_self"}
                 className="text-slate-600 hover:text-indigo-600 transition font-medium"
               >

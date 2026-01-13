@@ -34,7 +34,7 @@ export default function AboutPage() {
       {/* 2. 브랜드 아이덴티티 (8D 시각화) */}
       <section className="max-w-6xl mx-auto px-4 mb-24">
         <div className="bg-indigo-50 rounded-3xl p-8 md:p-16 text-center">
-          <h2 className="text-3xl font-bold text-indigo-900 mb-4">What is CREOD?</h2>
+          <h2 className="text-3xl font-bold text-indigo-900 mb-4">What is CREO.D?</h2>
           <p className="text-lg text-slate-700 mb-12 max-w-3xl mx-auto">
             <strong>'Creo(창조하다)'</strong>의 설렘을 담아,<br/>
             당신의 꿈(Dream)이 다채롭게 디자인될 수 있도록 <strong>8가지 즐거운 요소(8D)</strong>를 선물합니다.
@@ -114,13 +114,13 @@ export default function AboutPage() {
                   <strong> '아하!' 하며 무릎을 치는 즐거운 발견의 순간</strong>들이었습니다.
                 </p>
                 <p>
-                  크레오디(CREOD)는 단순한 지식 전달을 넘어, 
+                  크레오디(CREO.D)는 단순한 지식 전달을 넘어, 
                   <strong> '설레는 경험'</strong>과 <strong>'가슴 뛰는 울림'</strong>을 선물하고 싶습니다.
                   아동부터 성인까지, 누구나 자신의 가능성을 발견하고 
                   서로의 꿈을 응원하는 따뜻한 축제 같은 교육을 지향합니다.
                 </p>
                 <p>
-                  여러분의 삶이 한 편의 멋진 드라마가 되도록,<br/>
+                  여러분의 삶이 <strong>한 변의 멋진 드라마가 되도록</strong>,<br/>
                   크레오디가 <strong>즐거운 에너지</strong>로 함께하겠습니다.
                 </p>
               </div>

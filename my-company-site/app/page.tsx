@@ -1,19 +1,23 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Home() {
+  // 슬라이드에 사용할 이미지 목록
   const lecturePhotos = [
-    { src: "scene1.jpg" }, 
-    { src: "https://via.placeholder.com/600x400?text=Lecture+Scene+1" },
-    { src: "https://via.placeholder.com/600x400?text=Lecture+Scene+2" },
-    { src: "https://via.placeholder.com/600x400?text=Lecture+Scene+3" },
-    { src: "https://via.placeholder.com/600x400?text=Lecture+Scene+4" },
-    { src: "https://via.placeholder.com/600x400?text=Lecture+Scene+5" },
+    { src: "/ceo.jpg" },
+    { src: "/ceo2.png" },
+    { src: "/ceo3.png" },
+    { src: "/ceo4.png" },
+    { src: "/ceo5.png" },
+    { src: "/ceo6.png" },
   ];
 
   const infinitePhotos = [...lecturePhotos, ...lecturePhotos];
+  const [scrollY, setScrollY] = useState(0);
 
+  // 문의하기 버튼 클릭 시 부드러운 이동
   const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const section = document.getElementById('contact');
@@ -24,27 +28,114 @@ export default function Home() {
     }
   };
 
+  // 스크롤 위치 감지
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 스크롤 시 요소 등장 애니메이션
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen">
+      
+      {/* 0. 인트로 섹션 (로고 확대 효과) */}
+      <div className="relative h-[300vh]"> 
+        <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-white z-40 overflow-hidden">
+          <div 
+            className="flex flex-col items-center will-change-transform"
+            style={{ 
+              // 전체 컨테이너는 나중에(1500px 이후) 사라짐
+              opacity: Math.max(0, 1 - (scrollY - 1500) / 500),
+              pointerEvents: scrollY > 2000 ? 'none' : 'auto' 
+            }}
+          >
+            {/* 로고 영역 */}
+            <div 
+              className="w-40 h-40 md:w-64 md:h-64 bg-transparent flex items-center justify-center mb-8"
+              style={{ 
+                // 스크롤에 따라 로고 확대
+                transform: `scale(${1 + scrollY / 1000})`, 
+              }}
+            >
+              <img 
+                src="/logo.png" 
+                alt="CREOD Logo" 
+                className="w-full h-full object-contain" 
+              />
+            </div>
+            
+            {/* ▼▼▼ [수정된 부분] 텍스트만 먼저 투명해지도록 설정 ▼▼▼ */}
+            <h1 
+              className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight text-center"
+              style={{
+                // 스크롤 0~700px 구간에서 텍스트 투명도 1 -> 0으로 변경
+                // 로고는 계속 커지지만 글자는 먼저 사라져서 시선이 로고에 집중됨
+                opacity: Math.max(0, 1 - scrollY / 700)
+              }}
+            >
+              CREO.D Education Lab
+            </h1>
+            {/* ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ */}
+
+          </div>
+        </div>
+      </div>
+
       {/* 1. 히어로 섹션 */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-[1.2] md:leading-tight break-keep">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-50/50 via-white to-white -z-10" />
+
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+          <span className="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold mb-8 border border-indigo-100">
+            크레오디교육연구소
+          </span>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.1] tracking-tight break-keep">
             꿈을 설계하고, <br className="md:hidden" />성장을 디자인합니다. <br/>
-            <span className="text-indigo-600">Create&Design <br className="md:hidden" />Your Dream</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">
+              Create & Design <br className="md:hidden" />Your Dream
+            </span>
           </h1>
-          <p className="text-base md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto break-keep">
+          
+          <p className="text-lg md:text-2xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed break-keep">
             질문하고, 탐구하고, 설계하는 배움으로<br className="hidden md:block" />
             성장을 도모하고 개인과 조직의 가능성을 연결합니다.
           </p>
+          
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="contents" className="px-8 py-3.5 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition shadow-lg inline-block text-lg">
+            <Link href="contents" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition shadow-lg hover:shadow-indigo-500/25 inline-block text-lg">
               콘텐츠 보러가기
             </Link>
+            
             <a 
               href="#contact"
               onClick={handleScrollToContact}
-              className="px-8 py-3.5 bg-white text-indigo-600 font-bold border border-indigo-200 rounded-xl hover:bg-slate-50 transition inline-block text-lg cursor-pointer"
+              className="px-8 py-4 bg-white text-slate-700 font-bold border border-slate-200 rounded-2xl hover:bg-slate-50 hover:border-slate-300 transition inline-block text-lg cursor-pointer"
             >
               문의하기
             </a>
@@ -52,8 +143,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. 핵심 가치 (모바일 가로 3열 정렬 수정됨) */}
-      <section className="py-10 md:py-12 bg-white border-b border-slate-100">
+      {/* 2. 핵심 가치 */}
+      <section className="py-10 md:py-12 bg-white border-b border-slate-100 animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-100">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="flex flex-row justify-between md:justify-around items-start md:items-center gap-2 md:gap-4 text-center">
             
@@ -81,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* 3. 강의 현장 스케치 */}
-      <section className="py-20 bg-slate-50 overflow-hidden">
+      <section className="py-20 bg-slate-50 overflow-hidden animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">뜨거운 강의 현장</h2>
           <p className="text-slate-500 mt-2">크레오디의 열정 가득한 순간들을 만나보세요.</p>
@@ -89,10 +180,10 @@ export default function Home() {
         <div className="relative w-full">
           <div className="flex gap-6 animate-scroll w-max hover:[animation-play-state:paused]">
             {infinitePhotos.map((photo, index) => (
-              <div key={index} className="w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden shadow-md shrink-0 bg-gray-200">
+              <div key={index} className="w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden shadow-md shrink-0 bg-gray-200 border border-slate-200">
                 <img 
                   src={photo.src} 
-                  alt="강의 현장" 
+                  alt={`강의 현장 ${index}`} 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -102,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* 4. 문의하기 섹션 */}
-      <section id="contact" className="py-16 md:py-24 bg-white">
+      <section id="contact" className="py-16 md:py-24 bg-white animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-300">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-slate-900 break-keep">
             함께 성장할 준비가 되셨나요?
@@ -153,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* 5. SNS 링크 섹션 */}
-      <section className="py-12 bg-white border-t border-slate-100">
+      <section className="py-12 bg-white border-t border-slate-100 animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-300">
         <div className="container mx-auto px-6 text-center">
           <h3 className="text-xs font-bold text-slate-300 uppercase tracking-[0.2em] mb-8">
             Connect with CREOD

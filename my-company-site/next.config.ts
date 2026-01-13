@@ -1,11 +1,21 @@
 import type { NextConfig } from "next";
 
+// 현재 환경이 '개발 모드'인지 '배포 모드(production)'인지 자동으로 확인합니다.
+const isProd = process.env.NODE_ENV === "production";
+
+// ⚠️ 중요: 아래 'my-company-site' 부분을 대표님의 실제 '깃허브 저장소 이름'으로 꼭 바꿔주세요!
+// 예: 저장소 이름이 'creod-site'라면 -> "/creod-site"
+const repoName = "/company-intro"; 
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: "export",  // <-- 이게 있어야 디자인이 안 깨집니다! (필수)
-  basePath: "/company-intro", // 주소 뒤에 붙는 이름
+  output: "export",
+  
+  // [핵심] 배포(Prod)일 때만 경로를 붙이고, 개발(Dev)일 땐 경로를 비웁니다. (자동 스위치)
+  basePath: isProd ? repoName : "",
+  
+  // 깃허브 페이지에서 이미지가 깨지지 않도록 강제 설정
   images: {
-    unoptimized: true, // 이게 있어야 이미지가 엑박 없이 나옵니다!
+    unoptimized: true,
   },
 };
 
