@@ -1,4 +1,4 @@
-:HL["/company-intro/_next/static/chunks/1da80709668ca44d.css","style"]
+:HL["/company-intro/_next/static/chunks/f3b662815fa6e071.css","style"]
 :HL["/company-intro/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["ceo.jpg","image"]
 :HL["https://via.placeholder.com/400x500","image"]
@@ -7,4 +7,4 @@
 :HL["ceo4.png","image"]
 :HL["ceo5.png","image"]
 :HL["ceo6.png","image"]
-0:{"buildId":"dlMBNRDM2CIcBrocXAI04","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"instructors","paramType":null,"paramKey":"instructors","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"NQUxCQzBzHxIGVl_i83A0","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"instructors","paramType":null,"paramKey":"instructors","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
