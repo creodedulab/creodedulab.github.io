@@ -56,7 +56,7 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdmgVa9GR9gHB85XImj8C1otFrYlxundey8lKKOHT1zXbOYfw/viewform?usp=dialog";
+    const googleFormUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdmgVa9GR9gHB85XImj8C1otFrYlxundey8lKKOHT1zXbOYfw/formResponse";
     const formData = new FormData(form);
     const queryString = new URLSearchParams();
     
