@@ -60,7 +60,7 @@ export default function Home() {
     const formData = new FormData(form);
     const queryString = new URLSearchParams();
     
-    // ⚠️ 찾으신 ID로 교체 필수!
+    // 대표님의 구글 설문지 ID (유지됨)
     queryString.append("entry.401791583", formData.get("name") as string);
     queryString.append("entry.1010261547", formData.get("email") as string);
     queryString.append("entry.604668895", formData.get("tel") as string);
@@ -109,11 +109,10 @@ export default function Home() {
               <img src={`${prefix}/logo.png`} alt="CREOD Logo" className="w-full h-full object-contain" />
             </div>
             
-            {/* ▼▼▼ [수정된 부분] 메인 글자 투명도 조절 ▼▼▼ */}
+            {/* 메인 글자 투명도 조절 */}
             <h1 
               className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight text-center"
               style={{ 
-                // 스크롤이 0일 때 1, 스크롤을 내릴수록 서서히 0에 수렴하도록 조정
                 opacity: Math.max(0, 1 - scrollY / 600),
                 transition: 'opacity 0.1s ease-out'
               }}
@@ -152,9 +151,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. 핵심 가치 & 3. 현장 스케치 섹션 동일 (생략) */}
+      {/* 2. 핵심 가치 (기존 동일) */}
+      <section className="py-10 md:py-12 bg-white border-b border-slate-100 animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-100">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
+          <div className="flex flex-row justify-between md:justify-around items-start md:items-center gap-2 md:gap-4 text-center">
+            <div className="flex flex-col items-center gap-2 group w-1/3">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">🚀</div>
+              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">즐거운 소통</h3>
+            </div>
+            <div className="hidden md:block w-px h-12 bg-slate-100"></div>
+            <div className="flex flex-col items-center gap-2 group w-1/3">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">💡</div>
+              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">혁신적 아이디어</h3>
+            </div>
+            <div className="hidden md:block w-px h-12 bg-slate-100"></div>
+            <div className="flex flex-col items-center gap-2 group w-1/3">
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">🤝</div>
+              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">함께하는 동료</h3>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* 4. 문의하기 섹션 */}
+      {/* 3. 현장 스케치 (기존 동일) */}
+      <section className="py-20 bg-slate-50 overflow-hidden animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-200">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900">열정 가득 뜨거운 강의 현장</h2>
+          <p className="text-slate-500 mt-2">크레오디의 열정 가득한 순간들을 만나보세요.</p>
+        </div>
+        <div className="relative w-full">
+          <div className="flex gap-6 animate-scroll w-max hover:[animation-play-state:paused]">
+            {infinitePhotos.map((photo, index) => (
+              <div key={index} className="w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden shadow-md shrink-0 bg-gray-200 border border-slate-200">
+                <img 
+                  src={photo.src} 
+                  alt={`강의 현장 ${index}`} 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. 문의하기 섹션 (버튼 기능 추가됨) */}
       <section id="contact" className="py-20 md:py-32 bg-white animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16 text-slate-900">
@@ -162,20 +202,51 @@ export default function Home() {
             <p className="text-slate-500 text-lg">현장의 변화를 위해 함께 고민합니다.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
+            
+            {/* 왼쪽: 연락처 정보 및 버튼 */}
             <div className="space-y-10">
-              <div className="flex items-start gap-5 font-bold">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center">👤</div>
-                <div><h3 className="text-slate-900 text-lg">연락처</h3><p className="text-slate-600">010-9659-5120</p></div>
+              
+              {/* 연락처 + 전화하기 버튼 */}
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0 text-xl">👤</div>
+                <div className="space-y-1">
+                  <h3 className="font-bold text-slate-900 text-lg">연락처</h3>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="font-bold text-slate-600">010-9659-5120</p>
+                    <a 
+                      href="tel:010-9659-5120" 
+                      className="text-xs font-bold px-3 py-1 bg-white border border-indigo-200 text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white transition shadow-sm"
+                    >
+                      전화하기
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-start gap-5 font-bold">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center">✉️</div>
-                <div><h3 className="text-slate-900 text-lg">이메일</h3><p className="text-slate-600">ttingssam@naver.com</p></div>
+
+              {/* 이메일 + 이메일보내기 버튼 */}
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0 text-xl">✉️</div>
+                <div className="space-y-1">
+                  <h3 className="font-bold text-slate-900 text-lg">이메일</h3>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <p className="font-bold text-slate-600">ttingssam@naver.com</p>
+                    <a 
+                      href="mailto:ttingssam@naver.com" 
+                      className="text-xs font-bold px-3 py-1 bg-white border border-indigo-200 text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white transition shadow-sm"
+                    >
+                      메일보내기
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-start gap-5 font-bold">
-                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center">📍</div>
-                <div><h3 className="text-slate-900 text-lg">출강지역</h3><p className="text-slate-600">전국 출강 지원</p></div>
+
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0 text-xl">📍</div>
+                <div><h3 className="font-bold text-slate-900 text-lg">출강지역</h3><p className="font-bold text-slate-600">전국 출강 지원</p></div>
               </div>
             </div>
+
+            {/* 오른쪽: 입력 폼 */}
             <div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="text" name="name" required placeholder="성함 또는 기업/기관/학교" className="w-full px-6 py-4 bg-slate-50 rounded-xl border-none outline-none focus:ring-2 focus:ring-indigo-500" />
@@ -190,7 +261,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. SNS 섹션 생략 (기존 유지) */}
+      {/* 5. SNS 섹션 */}
+      <section className="py-12 bg-white border-t border-slate-100 animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-300">
+        <div className="container mx-auto px-6 text-center">
+          <h3 className="text-xs font-bold text-slate-300 uppercase tracking-[0.2em] mb-8">Connect with CREOD</h3>
+          <div className="flex justify-center items-center gap-6 md:gap-12">
+            <a href="https://blog.naver.com/ttingssam" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3"><div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-[#03C75A] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1"><svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M16.273 12.845L7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"/></svg></div><span className="text-[10px] md:text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">블로그</span></a>
+            <a href="https://www.instagram.com/creod_edu_lab/" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3"><div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-gradient-to-tr group-hover:from-[#f9ce34] group-hover:via-[#ee2a7b] group-hover:to-[#6228d7] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1"><svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div><span className="text-[10px] md:text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">회사 인스타</span></a>
+            <a href="https://www.instagram.com/tting_ssam/" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-3"><div className="w-12 h-12 md:w-14 md:h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1"><svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div><span className="text-[10px] md:text-xs font-bold text-slate-500 group-hover:text-slate-900 transition-colors">띵쌤 인스타</span></a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
