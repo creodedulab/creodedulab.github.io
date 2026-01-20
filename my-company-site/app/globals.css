@@ -17,21 +17,32 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    /* 한글이 뚝뚝 끊기지 않게 단어 단위로 줄바꿈 */
     word-break: keep-all; 
+    /* 가로 스크롤 생김 방지 */
     overflow-x: hidden; 
   }
 }
 
-/* 3. 컴포넌트 유틸리티 (여기가 빠져있었습니다!) */
+@layer utilities {
+  /* ▼▼▼ [추가] 스크롤바 숨기기 유틸리티 (상단 메뉴바용) ▼▼▼ */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 @layer components {
-  /* 스크롤바 제어 */
+  /* 커스텀 스크롤바 (콘텐츠 영역용) */
   .custom-scrollbar {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* PC 스타일 */
+  /* PC 스타일: 예쁜 스크롤바 */
   @media (min-width: 1024px) {
     .custom-scrollbar::-webkit-scrollbar {
       height: 6px;
@@ -50,7 +61,7 @@
     }
   }
 
-  /* 모바일 스타일 */
+  /* 모바일 스타일: 스크롤바 숨김 */
   @media (max-width: 1023px) {
     .custom-scrollbar {
       -ms-overflow-style: none;
@@ -60,35 +71,65 @@
       display: none;
     }
   }
-
-  /* 강사진 격자 레이아웃 */
-  .instructor-grid {
-    display: grid;
-    grid-template-rows: repeat(2, min-content);
-    grid-auto-flow: column;
-    gap: 1rem;
-    width: max-content;
-  }
-
-  @media (min-width: 768px) {
-    .instructor-grid {
-      gap: 2rem;
-    }
-  }
 }
 
-/* 4. 애니메이션 정의 */
+/* 4. 애니메이션 정의 (여기가 중요합니다!) */
+
+/* (1) 무한 스크롤 (강사진, 현장스케치) */
 @keyframes infinite-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
-
 .animate-scroll {
   display: flex;
   width: max-content;
   animation: infinite-scroll 60s linear infinite;
 }
 
-.animate-on-scroll {
-  transition: all 1s ease-out;
+/* (2) 모바일 메뉴 슬라이드 다운 */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* (3) 팝업창 페이드 인 (배경) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* (4) 팝업창 스케일 인 (내용물) */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* (5) 천천히 깜빡임 (회사소개 DREAM 원) */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SiteHeader from "./SiteHeader"; // 방금 만든 메뉴바 불러오기
+import SiteHeader from "./SiteHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,16 +16,16 @@ export const metadata: Metadata = {
     "청소년오리엔테이션","청소년오티교육","학교폭력교육","인성교육","인권교육","민주시민교육","고창진로강사","전주진로강사","익산진로강사","부안진로강사","무주진로강사","임실진로강사","정읍진로강사","진안진로강사",
     "전라북도진로업체","청소년진로업체","전주청년교육","익산청년교육","김제청년교육","군산청년교육","전주sns교육","AI실무교육","문서작성교육","문서작성강의"],
   icons: {
-    icon: "/company-intro/logo.png",
+    icon: "/logo.png",
   },
   openGraph: {
     title: "크레오디교육연구소",
     description: "꿈을 설계하고 성장을 디자인합니다. (대표: 띵쌤)",
-    url: "https://ttingssam.github.io/company-intro", 
+    url: "https://creodedulab.github.io/", 
     siteName: "크레오디교육연구소",
     images: [
       {
-        url: "/company-intro/intro-bg.jpg", 
+        url: "/intro-bg.jpg", 
         width: 800,
         height: 600,
       },
