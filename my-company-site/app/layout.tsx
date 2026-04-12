@@ -4,7 +4,7 @@ import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://creodedulab.github.io"),
+  metadataBase: new URL("https://creodedulab.github.io/company-intro/"),
   title: "크레오디교육연구소 | 꿈을 설계하고 성장을 디자인합니다",
   description: "크레오디교육연구소 공식 홈페이지 입니다. AI교육, 진로교육, 취업캠프, 강사양성, 레고시리어스, 강점탐색, 아로마테라피, 퍼스널컬러. 전국 출강 가능.",
   keywords: ["크레오디", "크레오디교육연구소", "띵쌤", "진로교육", "진로강사", "취업캠프", "강사섭외", "기업교육", 
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "크레오디교육연구소",
     description: "Create&Design Your Dream. 여러분의 꿈을 설계하고 성장을 디자인합니다.",
-    url: "https://creodedulab.github.io/", 
+    url: "https://creodedulab.github.io/company-intro/", 
     siteName: "크레오디교육연구소(Creo.D)",
     images: [
       {
-        url: "/og-image.jpg", 
+        url: "/og-image.png", 
         width: 1200,
         height: 630,
         alt: "크레오디교육연구소 대표 이미지",        
