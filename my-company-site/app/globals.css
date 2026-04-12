@@ -2,110 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. 전역 변수 설정 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-/* 2. 기본 스타일 설정 */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     background-color: var(--background);
     color: var(--foreground);
-    /* 한글이 뚝뚝 끊기지 않게 단어 단위로 줄바꿈 */
-    word-break: keep-all; 
-    /* 가로 스크롤 생김 방지 */
-    overflow-x: hidden; 
+    font-family: "Pretendard Variable", "Pretendard", "SUIT Variable", "SUIT", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 }
 
-/* 3. 유틸리티 클래스 (스크롤바 숨기기 + 애니메이션) */
 @layer utilities {
-  /* 스크롤바 숨기기 (상단 메뉴바용) */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
-  /* (1) 무한 스크롤 애니메이션 클래스 */
   .animate-scroll {
     display: flex;
     width: max-content;
     animation: infinite-scroll 60s linear infinite;
   }
 
-  /* (2) 모바일 메뉴 슬라이드 다운 클래스 */
   .animate-slideDown {
     animation: slideDown 0.3s ease-out forwards;
   }
 
-  /* (3) 팝업창 페이드 인 클래스 */
   .animate-fadeIn {
     animation: fadeIn 0.3s ease-out forwards;
   }
 
-  /* (4) 팝업창 스케일 인 클래스 */
   .animate-scaleIn {
     animation: scaleIn 0.3s ease-out forwards;
   }
 
-  /* (5) 천천히 깜빡임 클래스 */
   .animate-pulse-slow {
     animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
-/* 4. 컴포넌트 스타일 */
 @layer components {
-  /* 커스텀 스크롤바 (콘텐츠 영역용) */
   .custom-scrollbar {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* PC 스타일: 예쁜 스크롤바 */
   @media (min-width: 1024px) {
     .custom-scrollbar::-webkit-scrollbar {
       height: 6px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-track {
       background: #f1f5f9;
       border-radius: 10px;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb {
       background: #cbd5e1;
       border-radius: 10px;
       transition: background 0.3s;
     }
+
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-      background: #6366f1; 
+      background: #6366f1;
     }
   }
 
-  /* 모바일 스타일: 스크롤바 숨김 */
   @media (max-width: 1023px) {
     .custom-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
     .custom-scrollbar::-webkit-scrollbar {
       display: none;
     }
   }
 }
 
-/* 5. 키프레임 정의 (전역) */
 @keyframes infinite-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes slideDown {
@@ -113,6 +112,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -120,8 +120,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
@@ -129,6 +134,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -136,6 +142,12 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }
