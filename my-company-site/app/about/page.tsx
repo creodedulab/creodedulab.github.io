@@ -3,7 +3,6 @@
 import React from "react";
 
 export default function AboutPage() {
-  const src = "/company-intro";
 
   // 8가지 D 키워드
   const dKeywords = [

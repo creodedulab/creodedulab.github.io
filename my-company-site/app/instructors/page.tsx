@@ -3,7 +3,6 @@
 import React, { useState } from "react"; // useState 추가
 
 export default function InstructorsPage() {
-  const src = "/company-intro";
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
