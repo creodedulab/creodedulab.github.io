@@ -5,6 +5,39 @@ import Link from "next/link";
 
 export default function Home() {
   const bgImage = "/intro-bg.jpg"; 
+  const programHighlights = [
+    {
+      title: "AI·디지털 활용 교육",
+      description: "생성형 AI, 디지털 도구 활용, 미래역량 교육을 현장에 맞게 설계합니다.",
+    },
+    {
+      title: "진로·취업·자기이해",
+      description: "학생과 청년이 자신의 강점과 가능성을 발견하도록 돕는 프로그램을 진행합니다.",
+    },
+    {
+      title: "조직 맞춤형 특강",
+      description: "학교, 기관, 기업의 목적에 맞춘 특강과 워크숍으로 현장 적용도를 높입니다.",
+    },
+  ];
+  const quickFacts = [
+    {
+      label: "강의 대상",
+      value: "학교 · 기관 · 기업",
+    },
+    {
+      label: "운영 형태",
+      value: "특강 · 워크숍 · 캠프",
+    },
+    {
+      label: "출강 범위",
+      value: "전국 출강 지원",
+    },
+  ];
+  const inquiryExamples = [
+    "우리 기관에 맞는 AI 특강 주제를 함께 구성하고 싶어요.",
+    "학생 대상 진로·취업 프로그램을 학년별로 기획하고 싶어요.",
+    "행사 성격에 맞춰 강연, 워크숍, 참여형 수업을 추천받고 싶어요.",
+  ];
 
   const lecturePhotoRows = [
     Array.from({ length: 11 }, (_, index) => ({
@@ -95,41 +128,97 @@ export default function Home() {
       </div>
 
       {/* 1. 히어로 섹션 */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-50/50 via-white to-white -z-10" />
-        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-          <span className="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-600 text-sm font-bold mb-8 border border-indigo-100">크레오디교육연구소</span>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-slate-900 mb-8 leading-[1.1] tracking-tight break-keep">
-            꿈을 설계하고, <br className="md:hidden" />성장을 디자인합니다. <br/>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600">Create & Design Your Dream</span>
-          </h1>
-          <p className="text-lg md:text-2xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed break-keep">
-            질문하고, 탐구하고, 설계하는 배움으로 성장을 도모하고 가능성을 연결합니다.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contents" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition shadow-lg text-lg">콘텐츠 보러가기</Link>
-            <Link href="/#contact" className="px-8 py-4 bg-white text-slate-700 font-bold border border-slate-200 rounded-2xl hover:bg-slate-50 transition text-lg cursor-pointer">문의하기</Link>
+      <section className="relative overflow-hidden bg-white px-6 pb-20 pt-24 md:pb-28 md:pt-36">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.16),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.1),_transparent_34%)]" />
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">
+          <div>
+            <span className="mb-6 inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-bold text-indigo-700">
+              크레오디교육연구소
+            </span>
+            <h1 className="mb-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl md:text-7xl">
+              현장에 필요한 교육을 설계하고,
+              <br />
+              성장이 남는 순간을 만듭니다.
+            </h1>
+            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-2xl">
+              AI 교육부터 진로·취업, 관계와 소통까지.
+              크레오디는 학교와 기관, 기업의 목적에 맞는 배움을 함께 디자인합니다.
+            </p>
+            <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+              <Link href="/contents" className="px-8 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition shadow-lg text-lg text-center">
+                콘텐츠 보러가기
+              </Link>
+              <Link href="/#contact" className="px-8 py-4 bg-white text-slate-700 font-bold border border-slate-200 rounded-2xl hover:bg-slate-50 transition text-lg text-center">
+                교육 문의하기
+              </Link>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {quickFacts.map((fact) => (
+                <div key={fact.label} className="rounded-2xl border border-slate-200 bg-white/90 px-4 py-4 shadow-sm backdrop-blur">
+                  <p className="text-sm font-semibold text-slate-400">{fact.label}</p>
+                  <p className="mt-1 text-base font-bold text-slate-900">{fact.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -left-6 top-10 h-24 w-24 rounded-full bg-indigo-100 blur-2xl" />
+            <div className="absolute -right-4 bottom-10 h-28 w-28 rounded-full bg-sky-100 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-slate-900 p-6 text-white shadow-[0_30px_80px_-40px_rgba(15,23,42,0.55)]">
+              <div className="mb-6 flex items-center justify-between">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-200">Signature Programs</p>
+                <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white/80">맞춤 기획 가능</span>
+              </div>
+              <div className="space-y-4">
+                {programHighlights.map((program) => (
+                  <div key={program.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <h3 className="text-lg font-bold text-white">{program.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">{program.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-4 py-4 text-sm text-emerald-100">
+                교육 목표, 대상, 운영 시간에 맞춘 제안이 가능해요. 문의 단계에서 함께 구성해드립니다.
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* 2. 핵심 가치 */}
-      <section className="py-10 md:py-12 bg-white border-b border-slate-100">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <div className="flex flex-row justify-between md:justify-around items-start md:items-center gap-2 md:gap-4 text-center">
-            <div className="flex flex-col items-center gap-2 group w-1/3">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">🚀</div>
-              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">즐거운 소통</h3>
+      <section className="border-y border-slate-100 bg-slate-50 py-14 md:py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-10 text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.28em] text-slate-400">What We Design</p>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+              목적이 분명한 교육을 함께 만듭니다
+            </h2>
+            <p className="mt-3 text-base text-slate-500 md:text-lg">
+              교육 현장에서 자주 요청되는 주제들을 이해하기 쉽게, 참여가 살아나는 방식으로 설계합니다.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50 text-2xl">🚀</div>
+              <h3 className="text-xl font-bold text-slate-900">몰입되는 참여형 수업</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                강연형 전달에 그치지 않고 질문, 활동, 대화를 통해 현장에서 바로 반응이 일어나는 수업을 지향합니다.
+              </p>
             </div>
-            <div className="hidden md:block w-px h-12 bg-slate-100"></div>
-            <div className="flex flex-col items-center gap-2 group w-1/3">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">💡</div>
-              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">혁신적 아이디어</h3>
+            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-50 text-2xl">💡</div>
+              <h3 className="text-xl font-bold text-slate-900">현장 맞춤형 프로그램</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                대상 연령, 행사 목적, 운영 시간에 맞춰 내용을 조정해 실질적으로 필요한 교육 경험을 구성합니다.
+              </p>
             </div>
-            <div className="hidden md:block w-px h-12 bg-slate-100"></div>
-            <div className="flex flex-col items-center gap-2 group w-1/3">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl md:text-3xl group-hover:scale-110 transition-transform duration-300">🤝</div>
-              <h3 className="text-sm md:text-lg font-bold text-slate-800 break-keep">함께하는 동료</h3>
+            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-2xl">🤝</div>
+              <h3 className="text-xl font-bold text-slate-900">성장으로 이어지는 설계</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                수업이 끝난 뒤에도 생각이 남고 행동으로 이어지도록, 메시지와 경험의 흐름을 촘촘하게 만듭니다.
+              </p>
             </div>
           </div>
         </div>
@@ -177,6 +266,24 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col gap-12">
+            <div className="rounded-[32px] border border-slate-200 bg-white px-6 py-8 shadow-sm md:px-10">
+              <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.24em] text-indigo-500">Before You Ask</p>
+                  <h3 className="mt-2 text-2xl font-bold text-slate-900">이런 문의를 많이 주십니다</h3>
+                </div>
+                <p className="max-w-xl text-sm leading-6 text-slate-500">
+                  아직 구체적인 주제가 정리되지 않았어도 괜찮아요. 아래처럼 편하게 말씀해주시면 함께 방향을 잡아드립니다.
+                </p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {inquiryExamples.map((example) => (
+                  <div key={example} className="rounded-2xl bg-slate-50 px-5 py-5 text-sm font-medium leading-6 text-slate-700 ring-1 ring-slate-100">
+                    {example}
+                  </div>
+                ))}
+              </div>
+            </div>
             
             {/* [상단] 연락처 정보 (PC: 가로 3열 / 모바일: 세로 1열) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 lg:gap-8">
