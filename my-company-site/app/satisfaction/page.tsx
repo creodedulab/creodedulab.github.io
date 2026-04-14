@@ -37,7 +37,7 @@ export default function SatisfactionPage() {
         <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
           <div className="group rounded-3xl border-2 border-indigo-100 bg-gradient-to-br from-indigo-50 to-white p-10 text-center shadow-lg shadow-indigo-100/70 transition-all duration-300 hover:border-indigo-200 hover:shadow-2xl">
             <div className="mb-6 text-6xl transition-transform group-hover:scale-110">
-              👨‍💼
+              📝
             </div>
             <h3 className="mb-3 text-2xl font-bold text-slate-900">성인반</h3>
             <p className="mb-8 font-medium text-slate-500">
@@ -53,7 +53,7 @@ export default function SatisfactionPage() {
               성인반 설문 참여하기 &rarr;
             </Link>
 
-            <div className="mt-6 overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
+            <div className="mx-auto mt-6 w-1/2 overflow-hidden rounded-2xl border border-indigo-100 bg-white shadow-sm">
               <Image
                 src="/adult_survey.png"
                 alt="성인반 설문 안내"
@@ -66,7 +66,7 @@ export default function SatisfactionPage() {
 
           <div className="group rounded-3xl border-2 border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-10 text-center shadow-lg shadow-emerald-100/70 transition-all duration-300 hover:border-emerald-200 hover:shadow-2xl">
             <div className="mb-6 text-6xl transition-transform group-hover:scale-110">
-              🧒
+              🎒
             </div>
             <h3 className="mb-3 text-2xl font-bold text-slate-900">청소년반</h3>
             <p className="mb-8 font-medium text-slate-500">
@@ -82,7 +82,7 @@ export default function SatisfactionPage() {
               청소년반 설문 참여하기 &rarr;
             </Link>
 
-            <div className="mt-6 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
+            <div className="mx-auto mt-6 w-1/2 overflow-hidden rounded-2xl border border-emerald-100 bg-white shadow-sm">
               <Image
                 src="/child_survey.png"
                 alt="청소년반 설문 안내"
