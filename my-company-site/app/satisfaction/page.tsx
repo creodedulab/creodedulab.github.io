@@ -94,12 +94,6 @@ export default function SatisfactionPage() {
           </div>
         </div>
 
-        <div className="mt-20 text-center text-sm text-slate-400">
-          <p>
-            여러분의 소감과 피드백은 크레오교육연구소의 다음 교육을 더 단단하게
-            만드는 중요한 자료가 됩니다.
-          </p>
-        </div>
       </div>
     </div>
   );
