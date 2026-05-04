@@ -4,8 +4,9 @@ const path = require("path");
 
 const outRoot = path.join(__dirname, "out");
 const publicRoot = path.join(__dirname, "public");
-const port = 4173;
-const basePath = "/company-intro";
+const host = process.env.PREVIEW_HOST || "127.0.0.1";
+const port = Number(process.env.PORT || process.env.PREVIEW_PORT || 4173);
+const basePath = normalizeBasePath(process.env.PREVIEW_BASE_PATH || "");
 
 const mimeTypes = {
   ".css": "text/css; charset=utf-8",
@@ -21,6 +22,16 @@ const mimeTypes = {
   ".woff2": "font/woff2",
 };
 
+function normalizeBasePath(value) {
+  const cleanValue = value.trim();
+
+  if (!cleanValue || cleanValue === "/") {
+    return "";
+  }
+
+  return cleanValue.startsWith("/") ? cleanValue : `/${cleanValue}`;
+}
+
 function send(res, statusCode, body, contentType = "text/plain; charset=utf-8") {
   res.writeHead(statusCode, { "Content-Type": contentType });
   res.end(body);
@@ -29,8 +40,12 @@ function send(res, statusCode, body, contentType = "text/plain; charset=utf-8") 
 function resolvePath(urlPath) {
   let cleanPath = decodeURIComponent(urlPath.split("?")[0]);
 
-  if (cleanPath.startsWith(basePath)) {
+  if (basePath && cleanPath.startsWith(basePath)) {
     cleanPath = cleanPath.slice(basePath.length) || "/";
+  }
+
+  if (!cleanPath.startsWith("/")) {
+    cleanPath = `/${cleanPath}`;
   }
 
   if (cleanPath === "/") {
@@ -62,6 +77,12 @@ function resolvePath(urlPath) {
   return null;
 }
 
+if (!fs.existsSync(outRoot)) {
+  console.error("Missing static export folder: out");
+  console.error("Run `npm run build` before starting the preview server.");
+  process.exit(1);
+}
+
 const server = http.createServer((req, res) => {
   const filePath = resolvePath(req.url || "/");
 
@@ -84,6 +105,16 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(port, "127.0.0.1", () => {
-  console.log(`Static preview running at http://127.0.0.1:${port}${basePath}/`);
+server.on("error", (error) => {
+  if (error.code === "EADDRINUSE") {
+    console.log(`Static preview already appears to be running at http://${host}:${port}${basePath}/`);
+    process.exit(0);
+  }
+
+  console.error(error);
+  process.exit(1);
+});
+
+server.listen(port, host, () => {
+  console.log(`Static preview running at http://${host}:${port}${basePath}/`);
 });

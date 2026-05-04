@@ -103,13 +103,26 @@ const teamBuildingItems: ContentItem[] = [
       "발표와 피드백",
     ],
   },
+  {
+    title: "신입사원 교육",
+    desc: "조직의 비전과 핵심 가치를 이해하고, 비즈니스 매너와 협업 역량을 기를 수 있도록 설계한 입문 과정입니다.",
+    programName: "",
+    curriculum: [
+      "조직 이해와 프로의식 형성",
+      "비즈니스 매너와 직장 예절",
+      "시간 관리와 업무 보고 스킬",
+      "선배 세대와의 소통법",
+      "나만의 커리어 로드맵 설계",
+      "네트워킹과 수료 피드백",
+    ],
+  },
 ];
 
 const aiItems: ContentItem[] = [
   {
     title: "AI기초",
     desc: "생성형 AI의 기본 개념과 활용 방법을 쉽고 재미있게 이해하는 입문형 프로그램입니다.",
-    programName: "",
+    programName: "AI로 미래를 AI하다",
     curriculum: [
       "AI와 생성형 AI의 기본 이해",
       "생활 속 AI 사례 살펴보기",
@@ -122,7 +135,7 @@ const aiItems: ContentItem[] = [
   {
     title: "AI실무활용",
     desc: "문서 작성, 기획, 정리, 아이디어 확장 등 실제 업무에 AI를 연결해보는 실무형 프로그램입니다.",
-    programName: "",
+    programName: "문서작성,엑셀 등 VBA",
     curriculum: [
       "실무에서의 AI 활용 흐름 이해",
       "문서 작성 자동화 실습",
@@ -148,7 +161,7 @@ const aiItems: ContentItem[] = [
   {
     title: "바이브코딩",
     desc: "코딩 경험이 많지 않아도 AI와 함께 아이디어를 빠르게 구현해보는 창작형 프로그램입니다.",
-    programName: "",
+    programName: "메이킹로컬미니게임",
     curriculum: [
       "바이브코딩 개념 이해",
       "아이디어를 기능으로 바꾸기",
@@ -256,32 +269,6 @@ const careerItems: ContentItem[] = [
 
 const extraItems: ContentItem[] = [
   {
-    title: "신입사원 교육",
-    desc: "조직의 비전과 핵심 가치를 이해하고, 비즈니스 매너와 협업 역량을 기를 수 있도록 설계한 입문 과정입니다.",
-    programName: "",
-    curriculum: [
-      "조직 이해와 프로의식 형성",
-      "비즈니스 매너와 직장 예절",
-      "시간 관리와 업무 보고 스킬",
-      "선배 세대와의 소통법",
-      "나만의 커리어 로드맵 설계",
-      "네트워킹과 수료 피드백",
-    ],
-  },
-  {
-    title: "문서 작성",
-    desc: "기획서, 보고서, 제안서 등 실무 문서를 더 논리적이고 설득력 있게 작성하는 방법을 익히는 과정입니다.",
-    programName: "",
-    curriculum: [
-      "비즈니스 문서의 구조 이해",
-      "설득력 있는 논리 구성",
-      "가독성 높은 문서 레이아웃",
-      "기획서와 보고서 작성 실습",
-      "1:1 첨삭 피드백",
-      "최종 발표와 리뷰",
-    ],
-  },
-  {
     title: "GTQ자격반",
     desc: "그래픽 툴 활용 능력을 높이고, GTQ 자격 취득을 목표로 실습 중심으로 진행하는 프로그램입니다.",
     programName: "",
@@ -294,12 +281,38 @@ const extraItems: ContentItem[] = [
       "시험 대비 정리",
     ],
   },
+  {
+    title: "미리캔버스",
+    desc: "미리캔버스의 템플릿과 디자인 기능을 활용해 홍보물, 카드뉴스, 발표자료를 직접 제작해보는 실습형 프로그램입니다.",
+    programName: "",
+    curriculum: [
+      "미리캔버스 기본 기능 이해",
+      "템플릿 선택과 편집 실습",
+      "카드뉴스와 홍보물 제작",
+      "이미지와 텍스트 구성 다듬기",
+      "브랜드 색상과 레이아웃 적용",
+      "결과물 공유와 피드백",
+    ],
+  },
+  {
+    title: "캔바",
+    desc: "캔바의 다양한 디자인 도구를 활용해 실무와 수업에 필요한 시각 자료를 쉽고 빠르게 제작하는 프로그램입니다.",
+    programName: "",
+    curriculum: [
+      "캔바 인터페이스와 기능 이해",
+      "템플릿 기반 디자인 제작",
+      "프레젠테이션 자료 구성",
+      "SNS 콘텐츠와 포스터 제작",
+      "공유와 협업 기능 활용",
+      "완성본 발표와 피드백",
+    ],
+  },
 ];
 
 const sections: ContentSection[] = [
   {
     id: "team-building",
-    title: "팀빌딩",
+    title: "조직&협력(팀빌딩)",
     subtitle: "관계 형성, 협업, 분위기 전환이 필요한 프로그램을 모았습니다.",
     badge: "Team Building",
     items: teamBuildingItems,
@@ -320,8 +333,8 @@ const sections: ContentSection[] = [
   },
   {
     id: "extra",
-    title: "기타프로그램",
-    subtitle: "현장 요청이 많은 실무형·기본형 교육 프로그램입니다.",
+    title: "프로그램활용",
+    subtitle: "다양한 프로그램을 목적에 맞게 활용할 수 있도록 안내하는 가이드형 수업입니다.",
     badge: "Extra Program",
     items: extraItems,
   },

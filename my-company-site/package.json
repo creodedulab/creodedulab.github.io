@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "node preview-static.js",
+    "open-preview": "powershell -ExecutionPolicy Bypass -File ./scripts/open-preview.ps1",
     "start": "next start",
     "lint": "next lint",
     "deploy": "gh-pages -d out"
