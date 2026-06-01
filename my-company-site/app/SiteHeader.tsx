@@ -79,6 +79,9 @@ export default function SiteHeader() {
           <a href="https://padlet.com/ttingssam/padlet-jy6ojlig5uax46ly" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition cursor-pointer">
             무료서비스
           </a>
+          <a href="https://creodedulab.github.io/creod_promptbox/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition cursor-pointer">
+            프롬프트박스
+          </a>
           <Link href="/#contact" onClick={handleScrollToContact} className="px-4 py-2 bg-slate-900 text-white text-sm font-bold rounded-lg hover:bg-indigo-600 transition shadow-md ml-2">
             문의하기
           </Link>
@@ -123,6 +126,9 @@ export default function SiteHeader() {
               </Link>
               <a href="https://padlet.com/ttingssam/padlet-jy6ojlig5uax46ly" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-3 text-lg font-bold text-slate-800 hover:bg-white/50 rounded-xl border-b border-slate-100/50">
                 무료서비스
+              </a>
+              <a href="https://creodedulab.github.io/creod_promptbox/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-3 text-lg font-bold text-slate-800 hover:bg-white/50 rounded-xl border-b border-slate-100/50">
+                프롬프트박스
               </a>
               <div className="pt-3 pb-2">
                 <Link href="/#contact" onClick={handleScrollToContact} className="block w-full px-4 py-3 text-center bg-slate-900 text-white text-lg font-bold rounded-xl hover:bg-indigo-600 transition shadow-lg">
