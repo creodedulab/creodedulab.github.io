@@ -1,0 +1,52 @@
+{TIME_OF_DAY}
+
+1. crisp dawn twilight before sunrise
+2. misty and foggy early morning
+3. bright golden hour right at sunrise
+4. fresh and clear mid-morning daylight
+5. harsh high-noon with short direct shadows
+6. soft amber afternoon sunlight
+7. brilliant warm golden hour just before sunset
+8. dreamy purple and pink magic hour at dusk
+9. deep indigo twilight right after sunset
+10. starry midnight under a full moon
+11. pitch-black night illuminated only by artificial lights
+12. cloudy overcast midday with completely diffused light
+13. dynamic stormy afternoon with dark rolling clouds
+14. rainy morning with soft water reflections
+15. sun-drenched tropical mid-afternoon heat
+16. hazy and humid summer evening
+17. crisp autumn afternoon with long long shadows
+18. freezing cold winter morning with pale icy sunlight
+19. cozy fireside midnight with deep shadows
+20. neon-flooded cyberpunk midnight
+21. festive Christmas eve night with glowing lights
+22. early morning dew hour just as light breaks
+23. serene spring afternoon with soft scattering light
+24. spooky Halloween midnight with a blood-red moon
+25. clear starlight night with a visible Milky Way
+26. shifting cloud shadows during a breezy afternoon
+27. blinding desert high-noon with high contrast
+28. nostalgic faded retro polaroid daytime
+29. magical eclipse totality moment with eerie dim light
+30. volcanic ash-covered dark overcast daytime
+31. deep underwater shimmering noon light
+32. warm sepia-toned vintage dusk
+33. polar night with a glowing green aurora borealis
+34. bright mid-summer midnight sun phenomenon
+35. gloomy foggy late afternoon
+36. refreshing post-rain rainbow afternoon
+37. industrial morning with smog and filtered light
+38. quiet countryside midnight with firefly glows
+39. burning crimson sunset finale
+40. abstract multi-colored fantasy dreamscape daytime
+41. clean scandinavian minimalist white winter noon
+42. romantic Parisian street lamp evening
+43. bright sports stadium night game floodlight hour
+44. peaceful lakeside sunrise with rising steam
+45. dynamic lightning flash during a midnight storm
+46. cozy rainy afternoon looking through a window
+47. vibrant amusement park neon night
+48. calm and quiet mountain peak sunrise
+49. futuristic spaceship artificial synthetic daytime
+50. elegant platinum twilight with silver reflections

@@ -1,0 +1,52 @@
+{EYE_GAZE}
+
+1. looking directly into the camera lens
+2. looking slightly upward with wide curious eyes
+3. gazing far into the distance over the horizon
+4. tilting the head down while looking up at the viewer
+5. glancing over the shoulder toward the camera
+6. looking diagonally upward to the left
+7. looking diagonally upward to the right
+8. looking sharply to the side with a playful expression
+9. looking down toward the ground with a shy smile
+10. gazing softly at a 45-degree angle downward
+11. looking straight forward with fixed intense focus
+12. looking slightly away from the camera with a dreamy gaze
+13. looking straight up toward the zenith
+14. glancing sideways while keeping the face forward
+15. looking back with a startled expression
+16. looking up from a low angle with sparkling eyes
+17. gazing blankly ahead with half-closed sleepy eyes
+18. looking to the left with an inquisitive expression
+19. looking to the right with a bright confident gaze
+20. winking one eye while looking straight at the viewer
+21. looking downward with closed eyes and a soft smile
+22. looking slightly upward with blinking fluttering eyelashes
+23. turning the head away but looking back toward the camera
+24. looking straight ahead with a determined resolute gaze
+25. looking diagonally downward to the left
+26. looking diagonally downward to the right
+27. gazing into space with wide-open fascinated eyes
+28. looking down at one's own hands or feet
+29. looking upward with a surprised and amazed expression
+30. looking away sheepishly with a gentle blush
+31. looking at the viewer with a smug playful gaze
+32. looking straight ahead with wide innocent doll-like eyes
+33. looking slightly downward with a thoughtful pensive expression
+34. looking upward with teary sparkling eyes
+35. looking to the side with a cool indifferent gaze
+36. looking at the camera with an affectionate warm gaze
+37. tilting the head to the side while looking straight ahead
+38. looking upward from behind a raised hand or arm
+39. looking down from a high angle toward the viewer
+40. looking to the side with a mischievous squint
+41. gazing ahead with a serene calm facial expression
+42. looking diagonally upward while turning the body away
+43. looking straight into the camera with an energetic bright gaze
+44. looking downward with a sad nostalgic expression
+45. looking up with a cheerful laughing expression
+46. looking to the side as if distracted by something
+47. looking at the viewer with a mysterious subtle gaze
+48. looking straight ahead with a proud confident smile
+49. looking downward while peeking through long bangs
+50. looking upward with a purely joyful ecstatic gaze

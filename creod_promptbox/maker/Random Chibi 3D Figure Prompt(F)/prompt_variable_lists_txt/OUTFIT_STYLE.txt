@@ -1,0 +1,52 @@
+{OUTFIT_STYLE}
+
+1. classic preppy school uniform style
+2. futuristic cyberpunk tech-wear tactical style
+3. dark gothic lolita elegant lace style
+4. cozy rustic country cottagecore style
+5. rebellious punk-rock leather and chain style
+6. traditional elegant Korean Hanbok style
+7. hip-hop street-wear oversized slouchy style
+8. sleek modern corporate office chic style
+9. whimsical fairytale magical girl style
+10. rugged outdoor military tactical cargo style
+11. vintage 1950s rockabilly retro polka-dot style
+12. industrial steampunk mechanical explorer style
+13. athletic sporty tennis pleated cheerleading style
+14. luxurious high-end runway avant-garde style
+15. cozy winter ski-resort puffer jacket style
+16. traditional Japanese kimono festival style
+17. mysterious dark academia intellectual tweed style
+18. bohemian gypsy patchwork festival style
+19. cute fluffy animal onesie pajama style
+20. sleek professional astronaut space suit style
+21. classic royal prince military dress uniform style
+22. historical Victorian era corseted gown style
+23. modern tech-ninja stealth black style
+24. sweet patisserie baker apron style
+25. nautical sailor-navy officer uniform style
+26. pop-star glittering stage idol outfit style
+27. traditional Arabian nights genie style
+28. post-apocalyptic wasteland scavenger style
+29. clean Scandinavian minimalist linen style
+30. vintage aviation pilot flight suit style
+31. cute chibi-scale oversized denim dungaree style
+32. elegant bridal white lace wedding gown style
+33. traditional Chinese cheongsam qipao style
+34. spooky but cute Halloween witch style
+35. divine celestial angelic white robe style
+36. cyber-pop neon holographic dancer style
+37. urban skater girl beanie and shorts style
+38. classic British detective trench coat style
+39. tropical safari jungle explorer khaki style
+40. colorful pop-art comic book retro style
+41. traditional Scottish highland tartan kilt style
+42. cozy autumn cable-knit sweater style
+43. futuristic metallic cybernetic armor suit style
+44. elegant velvet vampire countess style
+45. playful circus ringmaster tailcoat style
+46. minimal lounge-wear oversized hoodie style
+47. wild western cowboy fringed suede style
+48. cute teddy-bear fluffy fleece outfit style
+49. vintage racetrack driver jumpsuit style
+50. elegant classical orchestra tailcoat musical style
