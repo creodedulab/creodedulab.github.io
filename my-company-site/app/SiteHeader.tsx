@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVibeMenuOpen, setIsVibeMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => e.preventDefault();
@@ -42,7 +43,10 @@ export default function SiteHeader() {
     }
   };
 
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsVibeMenuOpen(false);
+  };
 
   return (
     <>
@@ -79,8 +83,35 @@ export default function SiteHeader() {
           <a href="https://padlet.com/ttingssam/padlet-jy6ojlig5uax46ly" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition cursor-pointer">
             무료서비스
           </a>
-          <a href="https://creodedulab.github.io/creod_promptbox/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition cursor-pointer">
-            프롬프트박스
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setIsVibeMenuOpen(!isVibeMenuOpen)}
+              className="inline-flex items-center gap-1 px-3 py-2 text-sm font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition cursor-pointer"
+              aria-expanded={isVibeMenuOpen}
+              aria-haspopup="menu"
+            >
+              바이브코딩
+              <svg className={`w-4 h-4 transition ${isVibeMenuOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            {isVibeMenuOpen && (
+              <div className="absolute left-0 top-full mt-2 w-44 overflow-hidden rounded-lg border border-slate-100 bg-white shadow-lg" role="menu">
+                <a href="https://creodedulab.github.io/creod_promptbox/" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  프롬프트박스
+                </a>
+                <a href="https://creodgamebox.vercel.app" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  게임박스
+                </a>
+              </div>
+            )}
+          </div>
+          <a href="https://www.youtube.com/@TtingAI_Atelier" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white text-sm font-bold rounded-lg hover:bg-red-700 transition shadow-md ml-2">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z" />
+            </svg>
+            YouTube
           </a>
           <Link href="/#contact" onClick={handleScrollToContact} className="px-4 py-2 bg-slate-900 text-white text-sm font-bold rounded-lg hover:bg-indigo-600 transition shadow-md ml-2">
             문의하기
@@ -127,10 +158,37 @@ export default function SiteHeader() {
               <a href="https://padlet.com/ttingssam/padlet-jy6ojlig5uax46ly" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-3 text-lg font-bold text-slate-800 hover:bg-white/50 rounded-xl border-b border-slate-100/50">
                 무료서비스
               </a>
-              <a href="https://creodedulab.github.io/creod_promptbox/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-3 text-lg font-bold text-slate-800 hover:bg-white/50 rounded-xl border-b border-slate-100/50">
-                프롬프트박스
-              </a>
+              <div className="border-b border-slate-100/50">
+                <button
+                  type="button"
+                  onClick={() => setIsVibeMenuOpen(!isVibeMenuOpen)}
+                  className="flex w-full items-center justify-between px-4 py-3 text-left text-lg font-bold text-slate-800 hover:bg-white/50 rounded-xl"
+                  aria-expanded={isVibeMenuOpen}
+                  aria-haspopup="menu"
+                >
+                  바이브코딩
+                  <svg className={`w-5 h-5 transition ${isVibeMenuOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                {isVibeMenuOpen && (
+                  <div className="pb-2 pl-4" role="menu">
+                    <a href="https://creodedulab.github.io/creod_promptbox/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      프롬프트박스
+                    </a>
+                    <a href="https://creodgamebox.vercel.app" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      게임박스
+                    </a>
+                  </div>
+                )}
+              </div>
               <div className="pt-3 pb-2">
+                <a href="https://www.youtube.com/@TtingAI_Atelier" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mb-3 flex w-full items-center justify-center gap-2 px-4 py-3 text-center bg-red-600 text-white text-lg font-bold rounded-xl hover:bg-red-700 transition shadow-lg">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z" />
+                  </svg>
+                  YouTube
+                </a>
                 <Link href="/#contact" onClick={handleScrollToContact} className="block w-full px-4 py-3 text-center bg-slate-900 text-white text-lg font-bold rounded-xl hover:bg-indigo-600 transition shadow-lg">
                   문의하기
                 </Link>
