@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SPACEPICK — 구슬 레이스</title><link rel="stylesheet" href="style.css?v=9cfd7b99cfaa"><script src="vendor/three.js?v=c746bb03cc1d" defer></script><script src="spacepick.js?v=72dbe5e8ca12" defer></script></head>
+<body>
+<div id="world"></div><div id="labels" aria-hidden="true"></div>
+<section id="setup" class="screen">
+ <header><a class="brand" href="index.html"><span class="brand-icon">◉</span> SPACE<span>PICK</span></a><div class="audio-controls"><button type="button" class="music-toggle" data-sound-toggle aria-pressed="true">♫ 음악 켜짐</button><input id="musicVolume" type="range" min="0" max="100" value="70" aria-label="음악 음량"></div></header>
+ <main class="setup-grid"><div class="intro"><div class="eyebrow"><span></span> YOUR NEXT LUCKY MOMENT</div><h1>별빛을 넘어,<br>행운의 주인공으로<span>.</span></h1></div>
+ <div class="setup-card"><div class="section-label"><span>레이스 참가 설정</span><span class="pill">READY TO ROLL</span></div><div class="fields"><label>공 종류 수<input id="typeCount" type="number" min="1" max="500" value="20"></label><label>뽑을 공 개수<input id="pickCount" type="number" min="1" value="1"></label></div><div class="row-head"><span>COLOR</span><span>공 이름 / 번호</span><span>공 개수</span></div><div id="entryRows" class="entry-list"></div><div class="totals"><span>출발할 구슬 <b id="totalCount">20</b>개</span><span>당첨 <b id="pickSummary">1</b>개</span></div><p class="help">이름별로 공을 여러 개 넣을 수 있어요. 먼저 도착한 공부터 당첨되며, 같은 이름도 중복 당첨될 수 있습니다.</p><p id="error" role="alert"></p><button id="start" class="primary">레이스 시작하기 <span>↗</span></button><div class="limits">최대 500번 · 구슬 500개 · 설치 없이 바로 실행</div></div></main>
+ <footer><span>made by CREO.D</span></footer>
+</section>
+<section id="raceScreen" class="screen" hidden>
+ <div class="race-top"><div class="race-brand">◉ SPACEPICK <span id="trackName"></span></div><button id="skip" class="glass skip-button">최종 결과 바로 보기</button><button id="back" class="glass">← 설정으로</button></div><div class="progress-track"><div id="progress"></div></div>
+ <div class="race-info"><span class="live-dot"></span><span id="raceState">STARTING GRID</span><span id="timer">00:00</span></div><div class="sector-hud glass"><span id="sectorName">출발 궤도</span><small id="difficulty">난이도 ●○○○○</small></div>
+ <aside class="leaderboard glass"><div class="board-title">실시간 순위 <span id="arrivals">0 / 20</span></div><div id="ranking"></div><p id="targetInfo"></p></aside>
+ <div id="countdown" class="countdown" hidden>3</div><div id="announcement" class="announcement" role="status"></div>
+ <div class="race-bottom"><div class="glass camera-note"><span>◉</span><span id="cameraText">뒤에서 진행 방향을 보는 카메라</span></div><div class="glass buttons"><button data-sound-toggle aria-pressed="true">♫ 음악 켜짐</button><button id="cameraMode" aria-label="카메라 시점 변경">시점 변경</button><button id="pause" aria-label="일시정지">Ⅱ</button><button id="speed">1×</button></div></div>
+</section>
+<section id="results" class="results" hidden role="dialog" aria-modal="true" aria-labelledby="resultTitle"><div class="result-card"><div class="eyebrow">THE FINISH LINE</div><h2 id="resultTitle">오늘의 행운이 도착했어요.</h2><p id="resultDetail"></p><div id="winners"></div><details><summary>전체 도착 순위 보기</summary><ol id="allRanking"></ol></details><div class="result-buttons"><button id="replay" class="primary">한 번 더 레이스 ↗</button><button id="edit" class="secondary">설정 바꾸기</button><button id="copy" class="secondary">결과 복사</button></div><p class="help">이 샘플은 레이스 시뮬레이션입니다. 공식 추첨용 공정성 검증은 포함하지 않습니다.</p></div></section>
+<div id="fatal" hidden role="alert"></div>
+</body></html>

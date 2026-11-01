@@ -91,7 +91,7 @@ export default function SiteHeader() {
               aria-expanded={isVibeMenuOpen}
               aria-haspopup="menu"
             >
-              바이브코딩
+              추가사이트
               <svg className={`w-4 h-4 transition ${isVibeMenuOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
               </svg>
@@ -103,6 +103,12 @@ export default function SiteHeader() {
                 </a>
                 <a href="https://creodgamebox.vercel.app" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
                   게임박스
+                </a>
+                <a href="/space_pick/index.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  스페이스픽
+                </a>
+                <a href="/star_pick/index.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  별의선택
                 </a>
               </div>
             )}
@@ -166,7 +172,7 @@ export default function SiteHeader() {
                   aria-expanded={isVibeMenuOpen}
                   aria-haspopup="menu"
                 >
-                  바이브코딩
+                  추가사이트
                   <svg className={`w-5 h-5 transition ${isVibeMenuOpen ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                   </svg>
@@ -178,6 +184,12 @@ export default function SiteHeader() {
                     </a>
                     <a href="https://creodgamebox.vercel.app" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
                       게임박스
+                    </a>
+                    <a href="/space_pick/index.html" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      스페이스픽
+                    </a>
+                    <a href="/star_pick/index.html" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      별의선택
                     </a>
                   </div>
                 )}
