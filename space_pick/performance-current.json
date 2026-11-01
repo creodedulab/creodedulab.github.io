@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "after",
+    "count": 20,
+    "renderMs": 1.887499999254942,
+    "calls": 227,
+    "marbleDraws": 3,
+    "hudMs": 0.22499999962747097
+  },
+  {
+    "variant": "after",
+    "count": 500,
+    "renderMs": 2.125,
+    "calls": 110,
+    "marbleDraws": 3,
+    "hudMs": 1.212500000372529
+  }
+]

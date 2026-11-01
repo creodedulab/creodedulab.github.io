@@ -1,0 +1,15 @@
+{
+  "marbles": 500,
+  "steps": 600,
+  "beforeMilliseconds": [
+    3044.8168,
+    2573.3628,
+    2631.1791999999996
+  ],
+  "afterMilliseconds": [
+    652.9904,
+    454.0378999999999,
+    409.70579999999995
+  ],
+  "maxTrajectoryDifference": 0
+}

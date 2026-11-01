@@ -1,0 +1,62 @@
+[
+  {
+    "lanes": [
+      2,
+      2,
+      4,
+      4
+    ],
+    "modules": 92,
+    "time": 113.2500000000362,
+    "complete": true,
+    "stuck": []
+  },
+  {
+    "lanes": [
+      3,
+      4,
+      3,
+      2
+    ],
+    "modules": 92,
+    "time": 110.25000000003381,
+    "complete": true,
+    "stuck": []
+  },
+  {
+    "lanes": [
+      2,
+      4,
+      2,
+      4
+    ],
+    "modules": 92,
+    "time": 107.35833333336484,
+    "complete": true,
+    "stuck": []
+  },
+  {
+    "lanes": [
+      4,
+      4,
+      2,
+      3
+    ],
+    "modules": 84,
+    "time": 105.7250000000302,
+    "complete": true,
+    "stuck": []
+  },
+  {
+    "lanes": [
+      4,
+      2,
+      4,
+      3
+    ],
+    "modules": 84,
+    "time": 110.69166666670083,
+    "complete": true,
+    "stuck": []
+  }
+]
