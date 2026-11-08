@@ -110,6 +110,9 @@ export default function SiteHeader() {
                 <a href="/star_pick/index.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
                   별의선택
                 </a>
+                <a href="/the_outlaws_choice/index.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  무법자의선택
+                </a>
               </div>
             )}
           </div>
@@ -190,6 +193,9 @@ export default function SiteHeader() {
                     </a>
                     <a href="/star_pick/index.html" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
                       별의선택
+                    </a>
+                    <a href="/the_outlaws_choice/index.html" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      무법자의선택
                     </a>
                   </div>
                 )}
