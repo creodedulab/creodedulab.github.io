@@ -25,7 +25,6 @@
   $('draw').disabled=state.busy||ended;
   $('home').disabled=state.busy;
   $('draw').textContent=state.busy?'카드를 고르고 있습니다…':ended?'모든 번호를 뽑았습니다':state.history.length?'한 장 더 뽑기':'뽑기';
-  $('remaining').textContent=state.allowDuplicates?`중복 허용 · ${state.history.length}회 추첨`:`남은 번호 ${state.remaining.length}개 / ${state.maximum-state.minimum+1}개`;
  }
  function updateMusicButton(){
   const toggle=$('music-toggle');
@@ -77,7 +76,6 @@
   if(phase==='result'){
    state.busy=false;
    state.history.push(state.result);
-   $('result-label').textContent=`선택된 번호 · ${state.result}`;
    const item=document.createElement('li');
    item.textContent=String(state.result);
    $('history').appendChild(item);
@@ -101,7 +99,6 @@
    state.remaining.pop();
   }
   state.busy=true;
-  $('result-label').textContent='운명의 카드를 고르고 있습니다.';
   setPhase(state.quick?'result':'shuffle');
  }
  function switchView(view){state.view=view;$('scene').dataset.view=view;$('setup-form').hidden=view!=='setup';for(const id of ['action-frame','play-toolbar','play-footer'])$(id).hidden=view!=='play';canvas.setAttribute('aria-label',view==='setup'?'서부 술집의 남자와 추첨 설정 테이블':'나무 프레임 안의 손과 카드 추첨 장면')}
@@ -123,7 +120,6 @@
   state.result=null;
   $('history').replaceChildren();
   $('session-label').textContent=`${minimum} — ${maximum} · ${state.allowDuplicates?'중복 허용':'중복 없음'}`;
-  $('result-label').textContent='카드가 준비되었습니다.';
   switchView('play');
   setPhase('idle');
   $('draw').focus();
