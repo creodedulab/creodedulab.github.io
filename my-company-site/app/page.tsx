@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import LectureGallery from "./LectureGallery";
 
 export default function Home() {
   const bgImage = "/intro-bg.jpg"; 
@@ -39,16 +40,6 @@ export default function Home() {
     "행사 성격에 맞춰 강연, 워크숍, 참여형 수업을 추천받고 싶어요.",
   ];
 
-  const lecturePhotoRows = [
-    Array.from({ length: 11 }, (_, index) => ({
-      src: `/front${String(index + 1).padStart(2, "0")}.jpg`,
-    })),
-    Array.from({ length: 11 }, (_, index) => ({
-      src: `/front${String(index + 12).padStart(2, "0")}.jpg`,
-    })),
-  ];
-
-  const infinitePhotoRows = lecturePhotoRows.map((row) => [...row, ...row]);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -230,31 +221,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900">열정 가득 뜨거운 강의 현장</h2>
           <p className="text-slate-500 mt-2">크레오디의 열정 가득한 순간들을 만나보세요.</p>
         </div>
-        <div className="relative w-full space-y-6">
-          {infinitePhotoRows.map((photoRow, rowIndex) => (
-            <div key={rowIndex} className="overflow-hidden">
-              <div
-                className="flex gap-6 animate-scroll w-max hover:[animation-play-state:paused]"
-                style={{
-                  animationDirection: rowIndex === 1 ? "reverse" : "normal",
-                }}
-              >
-                {photoRow.map((photo, index) => (
-                  <div
-                    key={`${rowIndex}-${index}`}
-                    className="w-[280px] md:w-[400px] h-[200px] md:h-[280px] rounded-2xl overflow-hidden shadow-md shrink-0 bg-gray-200 border border-slate-200"
-                  >
-                    <img
-                      src={photo.src}
-                      alt={`강의 현장 ${rowIndex * 11 + (index % 11) + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <LectureGallery />
       </section>
 
       {/* 4. 문의하기 섹션 (레이아웃 개선: 상단 가로배치 + 하단 카드) */}

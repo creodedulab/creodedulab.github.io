@@ -107,6 +107,23 @@
   }
 }
 
+.lecture-gallery-track {
+  animation: lecture-gallery-scroll 50s linear infinite;
+}
+
+.lecture-gallery-track:hover,
+.lecture-gallery-track:focus-within {
+  animation-play-state: paused;
+}
+
+@keyframes lecture-gallery-scroll {
+  to { transform: translateX(calc(-50% - 12px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lecture-gallery-track { animation-play-state: paused; }
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;

@@ -29,7 +29,7 @@ const lecturePhotos = [
   { src: "/front08.jpg" },
   { src: "/front09.jpg" },
   { src: "/front10.jpg" },
-  { src: "/front11.jpg" },
+  { src: "/front11.jpg?v=20261112" },
   { src: "/front12.jpg" },
   { src: "/front13.jpg" },
   { src: "/front14.jpg" },

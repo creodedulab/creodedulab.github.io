@@ -81,7 +81,7 @@ export default function SiteHeader() {
             만족도조사
           </Link>
           <a href="https://padlet.com/ttingssam/padlet-jy6ojlig5uax46ly" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-bold text-slate-600 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition cursor-pointer">
-            무료서비스
+            무료제공자료
           </a>
           <div className="relative">
             <button
@@ -112,6 +112,12 @@ export default function SiteHeader() {
                 </a>
                 <a href="/the_outlaws_choice/index.html" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
                   무법자의선택
+                </a>
+                <a href="https://phototeam.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  포토팀빌딩
+                </a>
+                <a href="https://highschool-sepia.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  전국고교탐색
                 </a>
               </div>
             )}
@@ -165,7 +171,7 @@ export default function SiteHeader() {
                 만족도조사
               </Link>
               <a href="https://padlet.com/ttingssam/padlet-jy6ojlig5uax46ly" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-3 text-lg font-bold text-slate-800 hover:bg-white/50 rounded-xl border-b border-slate-100/50">
-                무료서비스
+                무료제공자료
               </a>
               <div className="border-b border-slate-100/50">
                 <button
@@ -196,6 +202,12 @@ export default function SiteHeader() {
                     </a>
                     <a href="/the_outlaws_choice/index.html" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
                       무법자의선택
+                    </a>
+                    <a href="https://phototeam.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      포토팀빌딩
+                    </a>
+                    <a href="https://highschool-sepia.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      전국고교탐색
                     </a>
                   </div>
                 )}
