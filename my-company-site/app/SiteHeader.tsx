@@ -119,6 +119,9 @@ export default function SiteHeader() {
                 <a href="https://highschool-sepia.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
                   전국고교탐색
                 </a>
+                <a href="https://wordthingcloud.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={() => setIsVibeMenuOpen(false)} className="block px-4 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-indigo-600" role="menuitem">
+                  워띵클라우드
+                </a>
               </div>
             )}
           </div>
@@ -208,6 +211,9 @@ export default function SiteHeader() {
                     </a>
                     <a href="https://highschool-sepia.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
                       전국고교탐색
+                    </a>
+                    <a href="https://wordthingcloud.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="block px-4 py-2 text-base font-bold text-slate-700 hover:bg-white/50 rounded-lg" role="menuitem">
+                      워띵클라우드
                     </a>
                   </div>
                 )}
